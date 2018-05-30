@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:LaunchContentDemo" x:Class="LaunchContentDemo.MainPage">
-    <StackLayout>
+    <Grid>
         <!-- Place new controls here -->
-        <Button Text="Launch" Clicked="Handle_Clicked" />
-    </StackLayout>
+        <Button Text="Launch 360&#186; content" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="Silver"
+                Clicked="Handle_Clicked" />
+    </Grid>
 </ContentPage>
