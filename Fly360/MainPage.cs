@@ -103,10 +103,13 @@ namespace Fly360
             });
         }
 
-        async void UrhoApp_CitySelected(object sender, EventArgs e)
+        void UrhoApp_CitySelected(object sender, EventArgs e)
         {
             urhoApp.CitySelected -= UrhoApp_CitySelected;
-            await Navigation.PushAsync(new HawaiiDetailsPage());
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                Navigation.PushAsync(new HawaiiDetailsPage());
+            });
         }
 
     }
