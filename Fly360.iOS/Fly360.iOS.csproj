@@ -168,6 +168,12 @@
   <ItemGroup>
     <BundleResource Include="Resources\blur.jpg" />
     <BundleResource Include="Resources\Data\earth.jpg" />
+    <BundleResource Include="Resources\Data\earth2.jpg" />
+    <BundleResource Include="Resources\Data\orlando.jpg" />
+    <BundleResource Include="Resources\Data\earth3.jpg" />
+    <BundleResource Include="Resources\Data\amsterdam.jpg" />
+    <BundleResource Include="Resources\Data\delhi.jpg" />
+    <BundleResource Include="Resources\Data\tokyo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Data\" />

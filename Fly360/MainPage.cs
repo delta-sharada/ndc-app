@@ -92,6 +92,7 @@ namespace Fly360
         protected override async void OnAppearing()
         {
             await StartUrhoApp();
+            urhoApp.CitySelected += UrhoApp_CitySelected;
         }
 
         async Task StartUrhoApp()
@@ -101,6 +102,13 @@ namespace Fly360
                     Orientation = Urho.ApplicationOptions.OrientationType.LandscapeAndPortrait 
             });
         }
+
+        async void UrhoApp_CitySelected(object sender, EventArgs e)
+        {
+            urhoApp.CitySelected -= UrhoApp_CitySelected;
+            await Navigation.PushAsync(new HawaiiDetailsPage());
+        }
+
     }
 
 }
