@@ -17,10 +17,10 @@ namespace Fly360
             }));
                              
             var links = new string[] {
-                "https://delta-sharada.github.io/ndc-content/hawaii/",
-                "https://delta-sharada.github.io/ndc-content/hawaii/",
-                "https://ndc-hackathon-demo.glitch.me/",
-                "https://ndc-hackathon-demo.glitch.me/"
+                "https://fly360.github.io/content/hawaii/",
+                "https://fly360.github.io/content/hawaii/",
+                "https://fly360.github.io/content/HawaiiVR.html",
+                "https://fly360.github.io/content/HawaiiVR.html"
 
             };
             var types = new LinkType[] { 

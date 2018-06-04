@@ -21,7 +21,7 @@ namespace Fly360
             };
             image.GestureRecognizers.Add(new TapGestureRecognizer(async (obj) =>
             {
-                Launch("https://delta-sharada.github.io/ndc-content/sq-business/index.html");
+                Launch("https://fly360.github.io/content/sq-business/index.html");
             }));
             Content = new Grid
             {
