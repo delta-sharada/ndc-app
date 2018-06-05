@@ -97,7 +97,10 @@ namespace Fly360
                 { "san", new float[] { 32.733358f, -117.193808f } },//san diego
                 { "sfo", new float[] { 37.620752f, -122.380050f } },//san fransico
                 { "snu", new float[] { 22.491947f, -79.945303f } },//santa calra
-                { "vps", new float[] { 30.494920f, -86.550364f } },//destin             }; 
+                { "vps", new float[] { 30.494920f, -86.550364f } },//destin
+                { "mes", new float[] { 37.215442f, -108.458600f } },//mesa verde
+                { "den", new float[] { 39.855932f, -104.673233f } },//denver
+                { "ase", new float[] { 39.219123f, -106.864559f } },//aspen             }; 
 
             foreach (var row in positions.Keys)
                 AddMarker(markersNode,

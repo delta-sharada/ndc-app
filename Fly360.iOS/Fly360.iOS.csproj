@@ -187,6 +187,9 @@
     <BundleResource Include="Resources\Data\lax.jpg" />
     <BundleResource Include="Resources\Data\nyc.jpg" />
     <BundleResource Include="Resources\Data\sfo.jpg" />
+    <BundleResource Include="Resources\Data\ase.jpg" />
+    <BundleResource Include="Resources\Data\den.jpg" />
+    <BundleResource Include="Resources\Data\mes.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Data\" />
