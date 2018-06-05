@@ -168,12 +168,25 @@
   <ItemGroup>
     <BundleResource Include="Resources\blur.jpg" />
     <BundleResource Include="Resources\Data\earth.jpg" />
-    <BundleResource Include="Resources\Data\earth2.jpg" />
-    <BundleResource Include="Resources\Data\orlando.jpg" />
     <BundleResource Include="Resources\Data\earth3.jpg" />
-    <BundleResource Include="Resources\Data\amsterdam.jpg" />
-    <BundleResource Include="Resources\Data\delhi.jpg" />
-    <BundleResource Include="Resources\Data\tokyo.jpg" />
+    <BundleResource Include="Resources\Data\ams.jpg" />
+    <BundleResource Include="Resources\Data\del.jpg" />
+    <BundleResource Include="Resources\Data\hnd.jpg" />
+    <BundleResource Include="Resources\Data\dab.jpg" />
+    <BundleResource Include="Resources\Data\eyw.jpg" />
+    <BundleResource Include="Resources\Data\fll.jpg" />
+    <BundleResource Include="Resources\Data\myr.jpg" />
+    <BundleResource Include="Resources\Data\ord.jpg" />
+    <BundleResource Include="Resources\Data\san.jpg" />
+    <BundleResource Include="Resources\Data\snu.jpg" />
+    <BundleResource Include="Resources\Data\vps.jpg" />
+    <BundleResource Include="Resources\Data\gcn.jpg" />
+    <BundleResource Include="Resources\Data\hnl.jpg" />
+    <BundleResource Include="Resources\Data\iad.jpg" />
+    <BundleResource Include="Resources\Data\las.jpg" />
+    <BundleResource Include="Resources\Data\lax.jpg" />
+    <BundleResource Include="Resources\Data\nyc.jpg" />
+    <BundleResource Include="Resources\Data\sfo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Data\" />

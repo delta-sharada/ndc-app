@@ -111,13 +111,25 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Data\earth.jpg" />
-    <AndroidAsset Include="Assets\Data\earth2.jpg" />
-    <AndroidAsset Include="Assets\Data\beach.jpg" />
     <AndroidAsset Include="Assets\Data\earth3.jpg" />
-    <AndroidAsset Include="Assets\Data\amsterdam.jpg" />
-    <AndroidAsset Include="Assets\Data\delhi.jpg" />
-    <AndroidAsset Include="Assets\Data\orlando.jpg" />
-    <AndroidAsset Include="Assets\Data\tokyo.jpg" />
+    <AndroidAsset Include="Assets\Data\ams.jpg" />
+    <AndroidAsset Include="Assets\Data\del.jpg" />
+    <AndroidAsset Include="Assets\Data\hnd.jpg" />
+    <AndroidAsset Include="Assets\Data\dab.jpg" />
+    <AndroidAsset Include="Assets\Data\eyw.jpg" />
+    <AndroidAsset Include="Assets\Data\fll.jpg" />
+    <AndroidAsset Include="Assets\Data\gcn.jpg" />
+    <AndroidAsset Include="Assets\Data\hnl.jpg" />
+    <AndroidAsset Include="Assets\Data\iad.jpg" />
+    <AndroidAsset Include="Assets\Data\las.jpg" />
+    <AndroidAsset Include="Assets\Data\lax.jpg" />
+    <AndroidAsset Include="Assets\Data\myr.jpg" />
+    <AndroidAsset Include="Assets\Data\nyc.jpg" />
+    <AndroidAsset Include="Assets\Data\ord.jpg" />
+    <AndroidAsset Include="Assets\Data\san.jpg" />
+    <AndroidAsset Include="Assets\Data\sfo.jpg" />
+    <AndroidAsset Include="Assets\Data\snu.jpg" />
+    <AndroidAsset Include="Assets\Data\vps.jpg" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
