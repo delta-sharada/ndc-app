@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using SkiaSharp;
 using Urho;
 using Urho.Actions;
+using Urho.Gui;
 using Urho.Shapes;
+using Urho.Urho2D;
 using Xamarin.Forms;
 
 namespace Fly360
@@ -63,7 +66,7 @@ namespace Fly360
             var earthNode = rootNode.CreateChild(name: "Earth");
             var earth = earthNode.CreateComponent<Sphere>();
             earth.Color = Urho.Color.Blue;
-            earthNode.SetScale(4f);
+            earthNode.SetScale(4.5f);
             earth.SetMaterial(Material.FromImage("earth3.jpg"));
             earthNode.Rotate(new Quaternion(x: 2f, y: -0.75f, z: 0), TransformSpace.Local);
 
@@ -101,32 +104,89 @@ namespace Fly360
                 { "mes", new float[] { 37.215442f, -108.458600f } },//mesa verde
                 { "den", new float[] { 39.855932f, -104.673233f } },//denver
                 { "ase", new float[] { 39.219123f, -106.864559f } },//aspen             }; 
+            var colors = new Urho.Color[] {
+                Urho.Color.FromHex("#f3b50c"),
+                Urho.Color.FromHex("#4ab075"),
+                Urho.Color.FromHex("#f0399d")
+            };
 
             foreach (var row in positions.Keys)
                 AddMarker(markersNode,
                           lat: positions[row][0],
-                          lon: positions[row][1], id: row);
+                          lon: positions[row][1], 
+                          id: row,
+                          color: colors.GetRandomElement());
 
             AutoRotate();
         }
 
-        Node AddMarker(Node parent, float lat, float lon, string id)         {             var markerNode = parent.CreateChild("MarkerRoot_" + id);             var markerHeadNode = markerNode.CreateChild("MarkerHeadModel_" + id);
+        Node AddMarker(Node parent, float lat, float lon, string id, Urho.Color color)         {             var markerNode = parent.CreateChild("MarkerRoot_" + id);             var markerHeadNode = markerNode.CreateChild("MarkerHeadModel_" + id);
             var markerTailNode = markerNode.CreateChild("MarkerTailModel_" + id);
 
             var pinCone = markerTailNode.CreateComponent<Urho.Shapes.Cone>();
             markerTailNode.Scale = new Vector3(0.045f, 0.09f, 0.045f);
-            pinCone.Color = Urho.Color.Red;
+            pinCone.Color = color;
 
             var pinHead = markerHeadNode.CreateComponent<Urho.Shapes.Sphere>();
             markerHeadNode.SetScale(0.1f);
-            pinHead.SetMaterial(Material.FromImage(id + ".jpg")); 
-            GetPositionForHeight(lat, lon, 2.08f, out double x1, out double y1, out double z1);             markerTailNode.Position = new Vector3((float)x1, (float)y1, (float)z1);             markerTailNode.LookAt(new Vector3(0, 0, 0), new Vector3(0, 1, 0),
+            //pinHead.SetMaterial(Material.FromImage(id + ".jpg"));
+            pinHead.Color = color;
+
+            GetPositionForHeight(lat, lon, 2.25f, out double x1, out double y1, out double z1);             markerTailNode.Position = new Vector3((float)x1, (float)y1, (float)z1);             markerTailNode.LookAt(new Vector3(0, 0, 0), new Vector3(0, 1, 0),
                    TransformSpace.Parent);
             markerTailNode.Rotate(new Quaternion(90, 0, 0), TransformSpace.Local);
 
-            GetPositionForHeight(lat, lon, 2.18f, out double x2, out double y2, out double z2);
+            GetPositionForHeight(lat, lon, 2.3f, out double x2, out double y2, out double z2);
             markerHeadNode.Position = new Vector3((float)x2, (float)y2, (float)z2);
             return markerNode;         }
+
+        private void SetTextAsMaterial(string id, string txt, Node node, Shape shape)
+        {
+            // Load image to SkiaSharp
+            // load the image from the embedded resource stream
+
+            var url = string.Format("Fly360.images.Data.{0}.jpg", id);
+
+            using (var resource = this.GetType().Assembly.GetManifestResourceStream(url))
+            using (var stream = new SKManagedStream(resource))
+            using (var bitmap = SKBitmap.Decode(stream))
+            {
+                var canvas = new SKCanvas(bitmap);
+                canvas.DrawBitmap(bitmap, 0, 0);
+                canvas.ResetMatrix();
+                var brush = new SKPaint
+                {
+                    TextSize = 55,
+                    IsAntialias = true,
+
+                    Color = SKColors.Yellow
+                };
+                canvas.DrawText(txt, bitmap.Width / 7f, bitmap.Height / 1.4f, brush);
+                var brush2 = new SKPaint
+                {
+                    TextSize = 55,
+                    IsAntialias = true,
+                    Style = SKPaintStyle.Stroke,
+                    StrokeWidth = 1,
+                    FakeBoldText = true,
+                    Color = SKColors.Black
+                };
+                canvas.DrawText(txt, bitmap.Width / 7f, bitmap.Height / 1.4f, brush2);
+                canvas.Flush();
+                var image = SKImage.FromBitmap(bitmap);
+                var data = image.Encode(SKEncodedImageFormat.Jpeg, 90);
+                var skiaImgBytes = data.ToArray();
+
+                // Create UrhoSharp Texture2D
+                Texture2D text = new Texture2D();
+                text.Load(new MemoryBuffer(skiaImgBytes));
+
+                var material = new Material();
+                material.SetTexture(TextureUnit.Diffuse, text);
+                material.SetTechnique(0, CoreAssets.Techniques.Diff, 0, 0);
+                shape.SetMaterial(material);
+            }
+        }
 
         private void GetPositionForHeight(float lat, float lon, float height, out double x, out double y, out double z)
         {
@@ -208,6 +268,11 @@ namespace Fly360
                             if (node.Name.StartsWith("MarkerHead"))
                             {
                                 selectedNode = node;
+
+                                var id = node.Name.Replace("MarkerHeadModel_", "");
+
+                                var box = node.CreateComponent<Box>();
+                                SetTextAsMaterial(id, id.ToUpper(), node, box);
                                 node.RunActions(new EaseElasticOut(new ScaleTo(0.7f, 0.5f)));
                             }
 
@@ -258,9 +323,12 @@ namespace Fly360
         {
             if (selectedNode != null)
             {
-
                 selectedNode.RemoveAllActions();
-                selectedNode.RunActions(new EaseElasticIn(new ScaleTo(0.2f, 0.1f)));
+                selectedNode.RunActions(new EaseElasticIn(new ScaleTo(0.05f, 0.1f)));
+
+                var box = selectedNode.GetComponent<Box>();
+                selectedNode.RemoveComponent(box);
+
                 selectedNode = null;
             }
         }

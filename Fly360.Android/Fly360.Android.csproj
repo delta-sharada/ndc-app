@@ -65,6 +65,9 @@
     <PackageReference Include="Xamarin.Android.Support.CustomTabs">
       <Version>27.0.2</Version>
     </PackageReference>
+    <PackageReference Include="SkiaSharp.Views.Forms">
+      <Version>1.60.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
