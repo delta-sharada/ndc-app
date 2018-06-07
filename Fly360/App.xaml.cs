@@ -11,10 +11,7 @@ namespace Fly360
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage()) {
-                BarBackgroundColor = Color.Blue,
-                BarTextColor = Color.White
-            };
+            MainPage = new CustomNavigationPage(new MainPage());
         }
 
         protected override void OnStart()
