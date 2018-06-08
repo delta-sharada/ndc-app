@@ -14,15 +14,6 @@
     <Compile Remove="MainPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="images\beach1.jpg" />
-    <None Remove="images\beach2.jpg" />
-    <None Remove="images\beach3.jpg" />
-    <None Remove="images\beach5.jpg" />
-    <None Remove="images\beach4.jpg" />
-    <None Remove="images\iconVR.png" />
-    <None Remove="images\iconEq.png" />
-    <None Remove="images\search.png" />
-    <None Remove="images\results.png" />
     <None Remove="images\Data\earth.jpg" />
     <None Remove="images\Data\earth3.jpg" />
     <None Remove="images\Data\ams.jpg" />
@@ -46,17 +37,26 @@
     <None Remove="images\Data\sfo.jpg" />
     <None Remove="images\Data\snu.jpg" />
     <None Remove="images\Data\vps.jpg" />
+    <None Remove="images\beach1.jpg" />
+    <None Remove="images\beach2.jpg" />
+    <None Remove="images\beach3.jpg" />
+    <None Remove="images\beach5.jpg" />
+    <None Remove="images\beach4.jpg" />
+    <None Remove="images\iconVR.png" />
+    <None Remove="images\iconEq.png" />
+    <None Remove="images\search.png" />
+    <None Remove="images\results.png" />
+    <None Remove="images\blur.jpg" />
+    <None Remove="images\mic_icon.png" />
+    <None Remove="images\search_icon.png" />
+    <None Remove="images\beachIcon.png" />
+    <None Remove="images\skiingIcon.png" />
+    <None Remove="images\cityIcon.png" />
+    <None Remove="images\luxuryIcon.png" />
+    <None Remove="images\familyIcon.png" />
+    <None Remove="images\safariIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="images\beach1.jpg" />
-    <EmbeddedResource Include="images\beach2.jpg" />
-    <EmbeddedResource Include="images\beach3.jpg" />
-    <EmbeddedResource Include="images\beach5.jpg" />
-    <EmbeddedResource Include="images\beach4.jpg" />
-    <EmbeddedResource Include="images\iconVR.png" />
-    <EmbeddedResource Include="images\iconEq.png" />
-    <EmbeddedResource Include="images\search.png" />
-    <EmbeddedResource Include="images\results.png" />
     <EmbeddedResource Include="images\Data\ams.jpg" />
     <EmbeddedResource Include="images\Data\ase.jpg" />
     <EmbeddedResource Include="images\Data\dab.jpg" />
@@ -78,10 +78,33 @@
     <EmbeddedResource Include="images\Data\sfo.jpg" />
     <EmbeddedResource Include="images\Data\snu.jpg" />
     <EmbeddedResource Include="images\Data\vps.jpg" />
+    <EmbeddedResource Include="images\beach1.jpg" />
+    <EmbeddedResource Include="images\beach2.jpg" />
+    <EmbeddedResource Include="images\beach3.jpg" />
+    <EmbeddedResource Include="images\beach5.jpg" />
+    <EmbeddedResource Include="images\beach4.jpg" />
+    <EmbeddedResource Include="images\iconVR.png" />
+    <EmbeddedResource Include="images\iconEq.png" />
+    <EmbeddedResource Include="images\search.png" />
+    <EmbeddedResource Include="images\results.png" />
+    <EmbeddedResource Include="images\blur.jpg" />
+    <EmbeddedResource Include="images\mic_icon.png" />
+    <EmbeddedResource Include="images\search_icon.png" />
+    <EmbeddedResource Include="images\beachIcon.png" />
+    <EmbeddedResource Include="images\skiingIcon.png" />
+    <EmbeddedResource Include="images\cityIcon.png" />
+    <EmbeddedResource Include="images\luxuryIcon.png" />
+    <EmbeddedResource Include="images\familyIcon.png" />
+    <EmbeddedResource Include="images\safariIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="images\search_icon.png">
+      <LogicalName>Fly360.images.search_icon.png</LogicalName>
+    </None>
   </ItemGroup>
 </Project>

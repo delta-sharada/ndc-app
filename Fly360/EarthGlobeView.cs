@@ -208,7 +208,7 @@ namespace Fly360
 
                 rootNode.RunActions(new RepeatForever(
                             new RotateBy(
-                                duration: 2f,
+                                duration: 5f,
                                 deltaAngleX: 0,
                                 deltaAngleY: -15,
                                 deltaAngleZ: 0)));

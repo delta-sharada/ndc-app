@@ -19,64 +19,55 @@ namespace Fly360
 
             BackgroundColor = Color.Black;
 
-            var entry = new Entry
+            var entry = new IconEntry
             {
-                BackgroundColor = Color.Transparent,
-                TextColor = Color.White,
-                Placeholder = "Search",
-                PlaceholderColor = Color.LightGray,
-                Margin = 25
-            };
-            var frame = new Frame
-            {
-                BackgroundColor = Color.LightGray,
-                BorderColor = Color.LightGray,
-                CornerRadius = 15,
-                Opacity = 0.33,
-                Margin = 25
+                Margin = new Thickness(25, 0),
             };
 
+            Grid.SetRow(entry, 1);
             var button = new Button
             {
-                BackgroundColor = Color.White,
-                TextColor = Color.Blue,
-                Text = "   Suggested Destinations   ",
+                BackgroundColor = Color.FromHex("#F2F6F8"),
+                TextColor = Color.FromHex("#5887F9"),
+                Text = "Suggested Destinations",
                 HorizontalOptions = LayoutOptions.Center,
-                Margin = 40
+                Margin = new Thickness(40, 0),
+                WidthRequest = 250,
+                CornerRadius = 5
             };
-            Grid.SetRow(button, 2);
-            button.Clicked += async(s, a) => {
+            Grid.SetRow(button, 3);
+            button.Clicked += async (s, a) =>
+            {
                 await Navigation.PushPopupAsync(popupPage);
             };
 
             urhoSurface = new UrhoSurface();
             urhoSurface.VerticalOptions = LayoutOptions.FillAndExpand;
-            Grid.SetRowSpan(urhoSurface, 3);
+            Grid.SetRowSpan(urhoSurface, 5);
 
             popupPage = new MenuPopupPage();
             popupPage.Appearing += (s, a) =>
             {
-                frame.IsVisible = false;
-                entry.IsVisible = false;
+                entry.Opacity = 0.25f;
                 button.IsVisible = false;
             };
             popupPage.Disappearing += (s, a) =>
             {
-                frame.IsVisible = true;
-                entry.IsVisible = true;
+                entry.Opacity = 1f;
                 button.IsVisible = true;
             };
 
             Content = new Grid
             {
                 RowDefinitions = {
-                    new RowDefinition { Height = GridLength.Auto },
+                    new RowDefinition { Height = 15 },
+                    new RowDefinition { Height = 40 },
                     new RowDefinition { Height = GridLength.Star },
-                    new RowDefinition { Height = GridLength.Auto }
+                    new RowDefinition { Height = 40 },
+                    new RowDefinition { Height = 40 }
                 },
                 Children = {
                     urhoSurface,
-                    frame,
                     entry,
                     button,
                 }
@@ -98,9 +89,10 @@ namespace Fly360
         async Task StartUrhoApp()
         {
             urhoApp = await urhoSurface.Show<EarthGlobeView>(
-                new Urho.ApplicationOptions(assetsFolder: "Data") { 
-                    Orientation = Urho.ApplicationOptions.OrientationType.LandscapeAndPortrait 
-            });
+                new Urho.ApplicationOptions(assetsFolder: "Data")
+                {
+                    Orientation = Urho.ApplicationOptions.OrientationType.LandscapeAndPortrait
+                });
         }
 
         void UrhoApp_CitySelected(object sender, EventArgs e)
@@ -112,6 +104,63 @@ namespace Fly360
             });
         }
 
+    }
+
+    public class CustomEntry : Entry
+    {
+        public CustomEntry()
+        {
+            Effects.Add(new EntryEffect());
+        }
+    }
+
+    public class IconEntry : Grid
+    {
+        public IconEntry()
+        {
+
+            ColumnDefinitions.Add(new ColumnDefinition { Width = 36 });
+            ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+            ColumnDefinitions.Add(new ColumnDefinition { Width = 36 });
+
+            var entry = new CustomEntry
+            {
+                BackgroundColor = Color.Transparent,
+                HorizontalOptions = LayoutOptions.Fill,
+                TextColor = Color.White,
+                Placeholder = "Search",
+                WidthRequest = 300,
+                PlaceholderColor = Color.FromHex("#8E8E93"),
+            };
+            Grid.SetColumn(entry, 1);
+
+            var frame = new Frame
+            {
+                BackgroundColor = Color.FromHex("#E8E9EA"),
+                BorderColor = Color.FromHex("#E8E9EA"),
+                CornerRadius = 15,
+                Opacity = 0.33
+            };
+            Grid.SetColumnSpan(frame, 3);
+
+            var search = new Image
+            {
+                Source = ImageSource.FromResource("Fly360.images.search_icon.png"),
+                Margin = 10
+            };
+
+            var mic = new Image
+            {
+                Source = ImageSource.FromResource("Fly360.images.mic_icon.png"),
+                Margin = 10
+            };
+            Grid.SetColumn(mic, 2);
+
+            Children.Add(frame);
+            Children.Add(mic);
+            Children.Add(search);
+            Children.Add(entry);
+        }
     }
 
 }

@@ -96,6 +96,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Launcher.cs" />
     <Compile Include="CustomNavigationPageRenderer.cs" />
+    <Compile Include="EntryEffect.cs" />
+    <Compile Include="LabelShadowEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

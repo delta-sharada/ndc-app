@@ -8,6 +8,7 @@ namespace Fly360
     {
         public CustomNavigationPage(Page root) : base(root)
         {
+            BarTextColor = Color.White;
         }
     }
 }

@@ -74,6 +74,8 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Launcher.cs" />
+    <Compile Include="EntryEffect.cs" />
+    <Compile Include="LabelShadowEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
