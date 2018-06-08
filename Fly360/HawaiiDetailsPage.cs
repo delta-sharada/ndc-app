@@ -11,9 +11,9 @@ namespace Fly360
         {
             Title = "Hawaii";
             NavigationPage.SetBackButtonTitle(this, string.Empty);
-            ToolbarItems.Add(new ToolbarItem("Book", null, async () => 
+            ToolbarItems.Add(new ToolbarItem("Search Flight", null, async () => 
             {
-                await Navigation.PushPopupAsync(new SearchPopupPage());
+                await Navigation.PushAsync(new SearchPage());
             }));
                              
             var links = new string[] {

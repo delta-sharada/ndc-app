@@ -21,6 +21,10 @@ namespace Fly360.iOS
 
             old = editText.BorderStyle;
             editText.BorderStyle = UITextBorderStyle.None;
+
+            editText.SpellCheckingType = UITextSpellCheckingType.No;             // No Spellchecking
+            editText.AutocorrectionType = UITextAutocorrectionType.No;           // No Autocorrection
+            editText.AutocapitalizationType = UITextAutocapitalizationType.AllCharacters;
         }
 
         protected override void OnDetached()

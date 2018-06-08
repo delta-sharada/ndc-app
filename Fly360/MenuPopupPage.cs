@@ -136,7 +136,10 @@ namespace Fly360
             Content = new Grid
             {
                 Children = {
-                    new Image { Source = "blur.jpg", Opacity = 0.25, Aspect = Aspect.Fill },
+                    new Image { 
+                        Source = ImageSource.FromResource("Fly360.images.blur.jpg"),
+                        Opacity = 0.33, 
+                        Aspect = Aspect.Fill },
                     new StackLayout {
                         Margin = new Thickness(40, 65, 40, 40),
                         Spacing = 25,

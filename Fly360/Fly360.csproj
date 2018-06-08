@@ -42,10 +42,6 @@
     <None Remove="images\beach3.jpg" />
     <None Remove="images\beach5.jpg" />
     <None Remove="images\beach4.jpg" />
-    <None Remove="images\iconVR.png" />
-    <None Remove="images\iconEq.png" />
-    <None Remove="images\search.png" />
-    <None Remove="images\results.png" />
     <None Remove="images\blur.jpg" />
     <None Remove="images\mic_icon.png" />
     <None Remove="images\search_icon.png" />
@@ -55,6 +51,26 @@
     <None Remove="images\luxuryIcon.png" />
     <None Remove="images\familyIcon.png" />
     <None Remove="images\safariIcon.png" />
+    <None Remove="images\deptIcon.png" />
+    <None Remove="images\arrvIcon.png" />
+    <None Remove="images\startIcon.png" />
+    <None Remove="images\endIcon.png" />
+    <None Remove="images\passengerIcon.png" />
+    <None Remove="images\seatIcon.png" />
+    <None Remove="images\searchImg.png" />
+    <None Remove="images\flightIcon.png" />
+    <None Remove="images\lounge.png" />
+    <None Remove="images\moreInfo.png" />
+    <None Remove="images\lessInfo.png" />
+    <None Remove="images\iconEq.png" />
+    <None Remove="images\iconVR.png" />
+    <None Remove="images\wifiIcon.png" />
+    <None Remove="images\usbIcon.png" />
+    <None Remove="images\ondemandIcon.png" />
+    <None Remove="images\airlines\dl.png" />
+    <None Remove="images\airlines\multi.png" />
+    <None Remove="images\airlines\ua.png" />
+    <None Remove="images\airlines\aa.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\Data\ams.jpg" />
@@ -83,10 +99,6 @@
     <EmbeddedResource Include="images\beach3.jpg" />
     <EmbeddedResource Include="images\beach5.jpg" />
     <EmbeddedResource Include="images\beach4.jpg" />
-    <EmbeddedResource Include="images\iconVR.png" />
-    <EmbeddedResource Include="images\iconEq.png" />
-    <EmbeddedResource Include="images\search.png" />
-    <EmbeddedResource Include="images\results.png" />
     <EmbeddedResource Include="images\blur.jpg" />
     <EmbeddedResource Include="images\mic_icon.png" />
     <EmbeddedResource Include="images\search_icon.png" />
@@ -96,6 +108,34 @@
     <EmbeddedResource Include="images\luxuryIcon.png" />
     <EmbeddedResource Include="images\familyIcon.png" />
     <EmbeddedResource Include="images\safariIcon.png" />
+    <EmbeddedResource Include="images\deptIcon.png" />
+    <EmbeddedResource Include="images\arrvIcon.png" />
+    <EmbeddedResource Include="images\startIcon.png" />
+    <EmbeddedResource Include="images\endIcon.png" />
+    <EmbeddedResource Include="images\passengerIcon.png" />
+    <EmbeddedResource Include="images\seatIcon.png" />
+    <EmbeddedResource Include="images\searchImg.png" />
+    <EmbeddedResource Include="images\flightIcon.png" />
+    <EmbeddedResource Include="images\lounge.png" />
+    <EmbeddedResource Include="images\moreInfo.png" />
+    <EmbeddedResource Include="images\lessInfo.png" />
+    <EmbeddedResource Include="images\iconEq.png" />
+    <EmbeddedResource Include="images\iconVR.png" />
+    <EmbeddedResource Include="images\wifiIcon.png" />
+    <EmbeddedResource Include="images\usbIcon.png" />
+    <EmbeddedResource Include="images\ondemandIcon.png" />
+    <EmbeddedResource Include="images\airlines\dl.png">
+      <LogicalName>dl.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\airlines\multi.png">
+      <LogicalName>multi.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\airlines\ua.png">
+      <LogicalName>ua.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\airlines\aa.png">
+      <LogicalName>aa.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
@@ -106,5 +146,17 @@
     <None Update="images\search_icon.png">
       <LogicalName>Fly360.images.search_icon.png</LogicalName>
     </None>
+    <None Update="images\blur.jpg">
+      <LogicalName>Fly360.images.blur.jpg</LogicalName>
+    </None>
+    <None Update="images\search_icon.png">
+      <LogicalName>Fly360.images.search_icon.png</LogicalName>
+    </None>
+    <None Update="images\deptIcon.png">
+      <LogicalName>Fly360.images.deptIcon.png</LogicalName>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\airlines\" />
   </ItemGroup>
 </Project>
