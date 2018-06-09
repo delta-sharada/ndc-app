@@ -18,6 +18,7 @@
   <ItemGroup>
     <Folder Include="images\" />
     <Folder Include="images\airlines\" />
+    <Folder Include="images\Data\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="images\splash.png" />
@@ -48,6 +49,27 @@
     <None Remove="images\skyClub.png" />
     <None Remove="images\upgradeSeats.png" />
     <None Remove="images\bookingConfirmed.png" />
+    <None Remove="images\Data\ams.jpg" />
+    <None Remove="images\Data\ase.jpg" />
+    <None Remove="images\Data\dab.jpg" />
+    <None Remove="images\Data\del.jpg" />
+    <None Remove="images\Data\den.jpg" />
+    <None Remove="images\Data\eyw.jpg" />
+    <None Remove="images\Data\fll.jpg" />
+    <None Remove="images\Data\gcn.jpg" />
+    <None Remove="images\Data\hnd.jpg" />
+    <None Remove="images\Data\hnl.jpg" />
+    <None Remove="images\Data\iad.jpg" />
+    <None Remove="images\Data\las.jpg" />
+    <None Remove="images\Data\lax.jpg" />
+    <None Remove="images\Data\mes.jpg" />
+    <None Remove="images\Data\myr.jpg" />
+    <None Remove="images\Data\nyc.jpg" />
+    <None Remove="images\Data\ord.jpg" />
+    <None Remove="images\Data\san.jpg" />
+    <None Remove="images\Data\sfo.jpg" />
+    <None Remove="images\Data\snu.jpg" />
+    <None Remove="images\Data\vps.jpg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\splash.png">
@@ -111,5 +133,26 @@
     <EmbeddedResource Include="images\bookingConfirmed.png">
       <LogicalName>bookingConfirmed.png</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="images\Data\ams.jpg" />
+    <EmbeddedResource Include="images\Data\ase.jpg" />
+    <EmbeddedResource Include="images\Data\dab.jpg" />
+    <EmbeddedResource Include="images\Data\del.jpg" />
+    <EmbeddedResource Include="images\Data\den.jpg" />
+    <EmbeddedResource Include="images\Data\eyw.jpg" />
+    <EmbeddedResource Include="images\Data\fll.jpg" />
+    <EmbeddedResource Include="images\Data\gcn.jpg" />
+    <EmbeddedResource Include="images\Data\hnd.jpg" />
+    <EmbeddedResource Include="images\Data\hnl.jpg" />
+    <EmbeddedResource Include="images\Data\iad.jpg" />
+    <EmbeddedResource Include="images\Data\las.jpg" />
+    <EmbeddedResource Include="images\Data\lax.jpg" />
+    <EmbeddedResource Include="images\Data\mes.jpg" />
+    <EmbeddedResource Include="images\Data\myr.jpg" />
+    <EmbeddedResource Include="images\Data\nyc.jpg" />
+    <EmbeddedResource Include="images\Data\ord.jpg" />
+    <EmbeddedResource Include="images\Data\san.jpg" />
+    <EmbeddedResource Include="images\Data\sfo.jpg" />
+    <EmbeddedResource Include="images\Data\snu.jpg" />
+    <EmbeddedResource Include="images\Data\vps.jpg" />
   </ItemGroup>
 </Project>

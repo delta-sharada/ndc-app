@@ -92,7 +92,7 @@ namespace Fly360
     public class Keys
     {
         public string SeatImage = "expressSeat.jpg";
-        public string SeatUrl = "https://fly360.github.io/content/sq-economy/index.html";
+        public string SeatUrl = "https://fly360.github.io/content/tn-economy/index.html";
         public string SeatIcon = "icon360.png";
         public string SkyImage = "skyClub.png";
         public string SkyUrl = "https://fly360.github.io/content/skyclubVR.html";
