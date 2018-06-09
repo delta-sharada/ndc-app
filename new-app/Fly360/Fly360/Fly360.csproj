@@ -1,0 +1,115 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
+    <PackageReference Include="UrhoSharp.Forms" Version="1.8.93" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.60.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.0.4" />
+    <PackageReference Include="SlideOverKit" Version="2.1.6.1" />
+    <PackageReference Include="Xamarin.Forms.CarouselView" Version="2.3.0-pre2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="MainPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="images\airlines\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="images\splash.png" />
+    <None Remove="images\mic_icon.png" />
+    <None Remove="images\search_icon.png" />
+    <None Remove="images\profile.png" />
+    <None Remove="images\blur.jpg" />
+    <None Remove="images\archiveIcon.png" />
+    <None Remove="images\cityIcon.png" />
+    <None Remove="images\hotelIcon.png" />
+    <None Remove="images\flightIcon.png" />
+    <None Remove="images\office.jpg" />
+    <None Remove="images\arrvIcon.png" />
+    <None Remove="images\deptIcon.png" />
+    <None Remove="images\endIcon.png" />
+    <None Remove="images\passengerIcon.png" />
+    <None Remove="images\seatIcon.png" />
+    <None Remove="images\startIcon.png" />
+    <None Remove="images\airlines\aa.png" />
+    <None Remove="images\airlines\dl.png" />
+    <None Remove="images\airlines\multi.png" />
+    <None Remove="images\airlines\ua.png" />
+    <None Remove="images\moreInfo.png" />
+    <None Remove="images\upgradeIcon.png" />
+    <None Remove="images\expressSeat.jpg" />
+    <None Remove="images\icon360.png" />
+    <None Remove="images\iconVR.png" />
+    <None Remove="images\skyClub.png" />
+    <None Remove="images\upgradeSeats.png" />
+    <None Remove="images\bookingConfirmed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\splash.png">
+      <LogicalName>splash.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\mic_icon.png">
+      <LogicalName>mic_icon.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\search_icon.png">
+      <LogicalName>search_icon.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\profile.png" />
+    <EmbeddedResource Include="images\blur.jpg">
+      <LogicalName>blur.jpg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\archiveIcon.png" />
+    <EmbeddedResource Include="images\cityIcon.png" />
+    <EmbeddedResource Include="images\hotelIcon.png" />
+    <EmbeddedResource Include="images\flightTakeoffIcon.png" />
+    <EmbeddedResource Include="images\office.jpg">
+      <LogicalName>office.jpg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\arrvIcon.png" />
+    <EmbeddedResource Include="images\deptIcon.png" />
+    <EmbeddedResource Include="images\endIcon.png" />
+    <EmbeddedResource Include="images\passengerIcon.png" />
+    <EmbeddedResource Include="images\seatIcon.png" />
+    <EmbeddedResource Include="images\startIcon.png" />
+    <EmbeddedResource Include="images\airlines\aa.png">
+      <LogicalName>aa.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\airlines\dl.png">
+      <LogicalName>dl.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\airlines\multi.png">
+      <LogicalName>multi.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\airlines\ua.png">
+      <LogicalName>ua.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\moreInfo.png" />
+    <EmbeddedResource Include="images\flightIcon.png" />
+    <EmbeddedResource Include="images\upgradeIcon.png">
+      <LogicalName>upgradeIcon.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\expressSeat.jpg">
+      <LogicalName>expressSeat.jpg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\icon360.png">
+      <LogicalName>icon360.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\iconVR.png">
+      <LogicalName>iconVR.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\skyClub.png">
+      <LogicalName>skyClub.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\upgradeSeats.png">
+      <LogicalName>upgradeSeats.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\bookingConfirmed.png">
+      <LogicalName>bookingConfirmed.png</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

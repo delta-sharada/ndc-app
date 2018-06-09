@@ -10,12 +10,11 @@ namespace Fly360
     {
         public MenuPopupPage()
         {
-            //<Button Text="Close Popup" TextColor="Red" Clicked="OnClose" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Button>
             HasSystemPadding = true;
 
             var label = new Label
             {
-                Text = "Suggested Destination Types",
+                Text = "Recent trips",
                 TextColor = Color.White,
                 FontSize = 18,
                 HorizontalTextAlignment = TextAlignment.Center
@@ -30,6 +29,7 @@ namespace Fly360
                 WidthRequest = 175,
                 HeightRequest = 40,
                 HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.End,
                 Margin = new Thickness(40, 0)
             };
 
@@ -46,8 +46,8 @@ namespace Fly360
                 "Older"
             };
             var images = new string[] {
-                "flightIcon",
-                "flightIcon",
+                "flightTakeoffIcon",
+                "flightTakeoffIcon",
                 "hotelIcon",
                 "archiveIcon",
                 "archiveIcon",
@@ -138,11 +138,11 @@ namespace Fly360
                 Children = {
                     new Image { 
                         Source = ImageSource.FromResource("blur.jpg"),
-                        Opacity = 0.5, 
+                        Opacity = 0.33, 
                         Aspect = Aspect.Fill },
                     new StackLayout {
-                        Margin = new Thickness(40, 65, 40, 40),
-                        Spacing = 25,
+                        Margin = new Thickness(40, 60, 40, 0),
+                        Spacing = 40,
                         Children = {
                             label,
                             grid,
@@ -160,7 +160,7 @@ namespace Fly360
         async void OnClicked()
         {
             await PopupNavigation.PopAsync();
-            await Navigation.PushAsync(new BeachOptionsPage());
+            //await Navigation.PushAsync(new BeachOptionsPage());
         }
 
     }

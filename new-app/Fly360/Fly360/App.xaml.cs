@@ -11,7 +11,7 @@ namespace Fly360
         {
             InitializeComponent();
 
-            MainPage = new CustomNavigationPage(new LoginPage());
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

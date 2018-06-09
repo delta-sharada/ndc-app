@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Rg.Plugins.Popup.Extensions;
 using Urho.Forms;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Extensions;
 
 namespace Fly360
 {
@@ -25,37 +25,28 @@ namespace Fly360
             };
 
             Grid.SetRow(entry, 1);
-            var button = new Button
-            {
-                BackgroundColor = Color.FromHex("#F2F6F8"),
-                TextColor = Color.FromHex("#5887F9"),
-                Text = "Suggested Destinations",
-                HorizontalOptions = LayoutOptions.Center,
-                Margin = new Thickness(40, 0),
-                WidthRequest = 250,
-                CornerRadius = 5
-            };
-            Grid.SetRow(button, 3);
-            button.Clicked += async (s, a) =>
-            {
-                await Navigation.PushPopupAsync(popupPage);
-            };
 
             urhoSurface = new UrhoSurface();
             urhoSurface.VerticalOptions = LayoutOptions.FillAndExpand;
-            Grid.SetRowSpan(urhoSurface, 5);
+            Grid.SetRowSpan(urhoSurface, 4);
+
+            var profileView = GetProfileView();
+            Grid.SetRow(profileView, 3);
 
             popupPage = new MenuPopupPage();
             popupPage.Appearing += (s, a) =>
             {
-                entry.Opacity = 0.25f;
-                button.IsVisible = false;
+                entry.Opacity = 0.2f;
+                urhoSurface.Opacity = 0.2f;
+                profileView.Opacity = 0.2f;
             };
             popupPage.Disappearing += (s, a) =>
             {
                 entry.Opacity = 1f;
-                button.IsVisible = true;
+                urhoSurface.Opacity = 1f;
+                profileView.Opacity = 1f;
             };
+
 
             Content = new Grid
             {
@@ -63,13 +54,12 @@ namespace Fly360
                     new RowDefinition { Height = 15 },
                     new RowDefinition { Height = 40 },
                     new RowDefinition { Height = GridLength.Star },
-                    new RowDefinition { Height = 40 },
-                    new RowDefinition { Height = 40 }
+                    new RowDefinition { Height = 80 }
                 },
                 Children = {
                     urhoSurface,
                     entry,
-                    button,
+                    profileView,
                 }
             };
         }
@@ -95,15 +85,101 @@ namespace Fly360
                 });
         }
 
-        void UrhoApp_CitySelected(object sender, EventArgs e)
+        void UrhoApp_CitySelected(object sender, string id)
         {
             urhoApp.CitySelected -= UrhoApp_CitySelected;
             Device.BeginInvokeOnMainThread(() =>
             {
-                Navigation.PushAsync(new HawaiiDetailsPage());
+                Navigation.PushAsync(new SearchPage {
+                    Code = id.ToUpper()
+                });
             });
         }
 
+
+
+        View GetProfileView()
+        {
+            var profile = new Image
+            {
+                Source = ImageSource.FromResource("Fly360.images.profile.png"),
+                Aspect = Aspect.AspectFit,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Margin = 5
+            };
+            Grid.SetRowSpan(profile, 2);
+
+            var name = new ShadowLabel
+            {
+                Text = "Jane Doe",
+                FontSize = 24,
+                FontAttributes = FontAttributes.Bold,
+                TextColor = Color.White,
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.End
+            };
+            Grid.SetColumn(name, 1);
+
+            var role = new Label
+            {
+                FontSize = 16,
+                TextColor = Color.White,
+                Text = "Consultant (Grade: B)",
+                HorizontalTextAlignment = TextAlignment.Start
+            };
+            Grid.SetColumn(role, 1);
+            Grid.SetRow(role, 1);
+
+            var box = new BoxView
+            {
+                Color = Color.FromHex("#5579F7")
+            };
+
+            Grid.SetRowSpan(box, 2);
+            Grid.SetColumnSpan(box, 3);
+
+            var button = new Button
+            {
+                BackgroundColor = Color.FromHex("#F2F6F8"),
+                TextColor = Color.FromHex("#5887F9"),
+                Text = "Trips",
+                HorizontalOptions = LayoutOptions.Center,
+                Margin = new Thickness(10, 25),
+                WidthRequest = 150,
+                CornerRadius = 5,
+            };
+            Grid.SetRow(button, 0);
+            Grid.SetRowSpan(button, 2);
+            Grid.SetColumn(button, 2);
+
+            button.Clicked += async (s, a) =>
+            {
+                await Navigation.PushPopupAsync(popupPage);
+            };
+
+            var grid = new Grid
+            {
+                ColumnDefinitions = {
+                    new ColumnDefinition { Width = 75 },
+                    new ColumnDefinition(),
+                    new ColumnDefinition { Width = 100 },
+                },
+                RowDefinitions = {
+                    new RowDefinition { Height = 40 },
+                    new RowDefinition { Height = GridLength.Star }
+                },
+                Children = {
+                    box,
+                    profile,
+                    name,
+                    role,
+                    button
+                }
+            };
+
+            return grid;
+        }
     }
 
     public class CustomEntry : Entry
@@ -145,13 +221,13 @@ namespace Fly360
 
             var search = new Image
             {
-                Source = ImageSource.FromResource("Fly360.images.search_icon.png"),
+                Source = ImageSource.FromResource("search_icon.png"),
                 Margin = 10
             };
 
             var mic = new Image
             {
-                Source = ImageSource.FromResource("Fly360.images.mic_icon.png"),
+                Source = ImageSource.FromResource("mic_icon.png"),
                 Margin = 10
             };
             Grid.SetColumn(mic, 2);
@@ -176,6 +252,5 @@ namespace Fly360
             });
         }
     }
-
 }
 

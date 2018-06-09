@@ -71,6 +71,10 @@
     <None Remove="images\airlines\multi.png" />
     <None Remove="images\airlines\ua.png" />
     <None Remove="images\airlines\aa.png" />
+    <None Remove="images\splash.jpg" />
+    <None Remove="images\iconEqBlack.png" />
+    <None Remove="images\flightIconYellow.png" />
+    <None Remove="images\profile.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\Data\ams.jpg" />
@@ -136,6 +140,10 @@
     <EmbeddedResource Include="images\airlines\aa.png">
       <LogicalName>aa.png</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="images\splash.jpg" />
+    <EmbeddedResource Include="images\iconEqBlack.png" />
+    <EmbeddedResource Include="images\flightIconYellow.png" />
+    <EmbeddedResource Include="images\profile.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
