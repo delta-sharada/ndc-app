@@ -7,6 +7,8 @@ namespace Fly360
 {
     public class SlideUpView : SlideMenuView
     {
+        public event EventHandler OnTapped;
+
         public SlideUpView()
         {
             IsFullScreen = true;
@@ -69,7 +71,13 @@ namespace Fly360
                             upgrade, 
                             price
                         },
-                        Orientation = StackOrientation.Horizontal
+                        Orientation = StackOrientation.Horizontal,
+                        GestureRecognizers = {
+                            new TapGestureRecognizer(async (obj) =>
+                            {
+                                this.OnTapped?.Invoke(this, EventArgs.Empty);
+                            })
+                        }
                     },
                     extras
                 }

@@ -42,6 +42,7 @@ namespace Fly360
                 },
             };
 
+
             Content = new Grid{
                 RowDefinitions = {
                     new RowDefinition(),
@@ -49,15 +50,25 @@ namespace Fly360
                 },
                 Children = {
                     carousalView,
+
                 }
             };
 
-            SlideMenu = new SlideUpView()
+            var upView = new SlideUpView()
             {
                 HeightRequest = 440,
                 DraggerButtonHeight = 40,
                 BindingContext = "test"
             };
+
+            upView.OnTapped += (sender, e) => {
+                if (upView.IsShown)
+                    HideMenu();
+                else
+                    ShowMenu();
+            };
+
+            this.SlideMenu = upView;
         }
     }
 

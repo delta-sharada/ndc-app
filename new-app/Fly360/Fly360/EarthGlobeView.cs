@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using SkiaSharp;
 using Urho;
 using Urho.Actions;
@@ -329,13 +330,14 @@ namespace Fly360
             }
         }
 
-        private void ResetSelectedNode()
+        private async void ResetSelectedNode()
         {
             if (selectedNode != null)
             {
                 selectedNode.RemoveAllActions();
                 selectedNode.RunActions(new EaseElasticIn(new ScaleTo(0.05f, 0.1f)));
 
+                await Task.Delay(500);
                 var box = selectedNode.GetComponent<Box>();
                 selectedNode.RemoveComponent(box);
 
