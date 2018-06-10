@@ -330,14 +330,14 @@ namespace Fly360
             }
         }
 
-        private async void ResetSelectedNode()
+        private void ResetSelectedNode()
         {
             if (selectedNode != null)
             {
                 selectedNode.RemoveAllActions();
                 selectedNode.RunActions(new EaseElasticIn(new ScaleTo(0.05f, 0.1f)));
 
-                await Task.Delay(500);
+                //await Task.Delay(500);
                 var box = selectedNode.GetComponent<Box>();
                 selectedNode.RemoveComponent(box);
 
