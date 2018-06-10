@@ -86,7 +86,8 @@ namespace Fly360
 
             var positions = new Dictionary<string, float[]> {
                 { "hnd", new float[] { 35.549140f, 139.780053f }},//tokyo
-                { "ams", new float[] { 52.309876f, 4.768231f } },//amsterdam
+                //{ "ams", new float[] { 52.309876f, 4.768231f } },//amsterdam
+                { "lhr", new float[] { 51.469828f, -0.454156f } },//heathrow
                 { "del", new float[] { 28.639446f, 77.123433f } },//delhi
                 { "dab", new float[] { 29.182539f, -81.053463f } },//daytona
                 { "eyw", new float[] { 24.555340f, -81.757469f } },//keywest

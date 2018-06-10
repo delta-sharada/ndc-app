@@ -25,6 +25,7 @@ namespace Fly360
             {
                 Keys = new Keys
                 {
+                    Mode = "2",
                     SeatImage = "upgradeSeats.png",
                     SeatUrl = "https://fly360.github.io/content/luxuryVR.html",
                     SeatIcon = "iconVR.png",

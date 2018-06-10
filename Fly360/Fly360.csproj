@@ -75,6 +75,15 @@
     <None Remove="images\iconEqBlack.png" />
     <None Remove="images\flightIconYellow.png" />
     <None Remove="images\profile.png" />
+    <None Remove="images\hotels\1.png" />
+    <None Remove="images\hotels\2.png" />
+    <None Remove="images\hotels\3.png" />
+    <None Remove="images\hotels\4.png" />
+    <None Remove="images\hotels\5.png" />
+    <None Remove="images\hotels\6.png" />
+    <None Remove="images\hotels\7.png" />
+    <None Remove="images\hotels\8.png" />
+    <None Remove="images\hotels\9.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\Data\ams.jpg" />
@@ -144,6 +153,15 @@
     <EmbeddedResource Include="images\iconEqBlack.png" />
     <EmbeddedResource Include="images\flightIconYellow.png" />
     <EmbeddedResource Include="images\profile.png" />
+    <EmbeddedResource Include="images\hotels\1.png" />
+    <EmbeddedResource Include="images\hotels\2.png" />
+    <EmbeddedResource Include="images\hotels\3.png" />
+    <EmbeddedResource Include="images\hotels\4.png" />
+    <EmbeddedResource Include="images\hotels\5.png" />
+    <EmbeddedResource Include="images\hotels\6.png" />
+    <EmbeddedResource Include="images\hotels\7.png" />
+    <EmbeddedResource Include="images\hotels\8.png" />
+    <EmbeddedResource Include="images\hotels\9.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">

@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Threading.Tasks;
+using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 
 namespace Fly360
@@ -16,6 +17,7 @@ namespace Fly360
                 await Navigation.PopToRootAsync();
             }));
         }
+
 
         protected override void OnAppearing()
         {
@@ -82,7 +84,7 @@ namespace Fly360
                 var fromEntry = new SearchEntry(ImageSource.FromResource("Fly360.images.deptIcon.png"))
                 {
                     VerticalOptions = LayoutOptions.Start,
-                    Text = "ATL"
+                    Text = "EWR"
                 };
 
                 var toEntry = new SearchEntry(ImageSource.FromResource("Fly360.images.arrvIcon.png"))
@@ -95,7 +97,7 @@ namespace Fly360
                 var startEntry = new SearchEntry(ImageSource.FromResource("Fly360.images.startIcon.png"), true)
                 {
                     VerticalOptions = LayoutOptions.Start,
-                    Text = DateTime.Today.AddDays(7).ToString("MM/dd/yyyy")
+                    Text = DateTime.Today.AddDays(6).ToString("MM/dd/yyyy")
                 };
                 Grid.SetRow(startEntry, 1);
                 Grid.SetColumn(startEntry, 0);
@@ -103,7 +105,7 @@ namespace Fly360
                 var endEntry = new SearchEntry(ImageSource.FromResource("Fly360.images.endIcon.png"), true)
                 {
                     VerticalOptions = LayoutOptions.Start,
-                    Text = DateTime.Today.AddDays(10).ToString("MM/dd/yyyy")
+                    Text = DateTime.Today.AddDays(19).ToString("MM/dd/yyyy")
                 };
                 Grid.SetRow(endEntry, 1);
                 Grid.SetColumn(endEntry, 1);
@@ -138,6 +140,12 @@ namespace Fly360
                 Grid.SetRow(searchBtn, 3);
                 Grid.SetColumnSpan(searchBtn, 2);
                 searchBtn.Clicked += async (sender, e) => {
+                    var loadingPage = new LoadingPopupPage();
+                    await Navigation.PushPopupAsync(loadingPage);
+                    await Task.Delay(2000);
+                    await Navigation.RemovePopupPageAsync(loadingPage);
+
+
                     await Navigation.PushAsync(new ResultPage());
                 };
 
@@ -190,7 +198,6 @@ namespace Fly360
                 ColumnSpacing = 10;
                 _entry = new CustomEntry
                 {
-                    Text = "ATL",
                     IsSpellCheckEnabled = false,
                     WidthRequest = 115,
                     VerticalOptions = LayoutOptions.Start,

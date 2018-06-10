@@ -11,6 +11,7 @@
     <PackageReference Include="Rg.Plugins.Popup" Version="1.0.4" />
     <PackageReference Include="SlideOverKit" Version="2.1.6.1" />
     <PackageReference Include="Xamarin.Forms.CarouselView" Version="2.3.0-pre2" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="MainPage.xaml.cs" />
@@ -70,6 +71,20 @@
     <None Remove="images\Data\sfo.jpg" />
     <None Remove="images\Data\snu.jpg" />
     <None Remove="images\Data\vps.jpg" />
+    <None Remove="images\carIcon.png" />
+    <None Remove="images\Data\lhr.jpg" />
+    <None Remove="images\cars\1.jpg" />
+    <None Remove="images\cars\2.jpg" />
+    <None Remove="images\cars\3.jpg" />
+    <None Remove="images\hotels\8.png" />
+    <None Remove="images\hotels\9.png" />
+    <None Remove="images\hotels\4.png" />
+    <None Remove="images\hotels\5.png" />
+    <None Remove="images\hotels\7.png" />
+    <None Remove="images\hotels\6.png" />
+    <None Remove="images\hotels\2.png" />
+    <None Remove="images\hotels\3.png" />
+    <None Remove="images\hotels\1.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\splash.png">
@@ -154,5 +169,19 @@
     <EmbeddedResource Include="images\Data\sfo.jpg" />
     <EmbeddedResource Include="images\Data\snu.jpg" />
     <EmbeddedResource Include="images\Data\vps.jpg" />
+    <EmbeddedResource Include="images\carIcon.png" />
+    <EmbeddedResource Include="images\Data\lhr.jpg" />
+    <EmbeddedResource Include="images\cars\1.jpg" />
+    <EmbeddedResource Include="images\cars\2.jpg" />
+    <EmbeddedResource Include="images\cars\3.jpg" />
+    <EmbeddedResource Include="images\hotels\8.png" />
+    <EmbeddedResource Include="images\hotels\9.png" />
+    <EmbeddedResource Include="images\hotels\4.png" />
+    <EmbeddedResource Include="images\hotels\5.png" />
+    <EmbeddedResource Include="images\hotels\7.png" />
+    <EmbeddedResource Include="images\hotels\6.png" />
+    <EmbeddedResource Include="images\hotels\2.png" />
+    <EmbeddedResource Include="images\hotels\3.png" />
+    <EmbeddedResource Include="images\hotels\1.png" />
   </ItemGroup>
 </Project>
