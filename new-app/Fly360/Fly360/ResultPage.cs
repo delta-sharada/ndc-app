@@ -280,6 +280,8 @@ namespace Fly360
         public Keys Keys = new Keys();
         View hotelToggle;
         View carToggle;
+        View hotelLbl;
+        View carLbl;
 
         public ExtrasView()
         {
@@ -420,8 +422,13 @@ namespace Fly360
                 FontSize = 14,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalOptions = LayoutOptions.End,
-                Margin = 10
+                Margin = 10,
+                IsVisible = false
             };
+            if (index == 2)
+                hotelLbl = lbl;
+            else
+                carLbl = lbl;
 
             var iconType = index == 2 ? "hotelIcon" : "carIcon";
             var img = new Image
@@ -478,12 +485,16 @@ namespace Fly360
         {
             if (carToggle != null)
                 carToggle.IsVisible = !carToggle.IsVisible;
+            if (carLbl != null)
+                carLbl.IsVisible = !carToggle.IsVisible;
         }
 
         private void OnHClicked()
         {
             if (hotelToggle != null)
                 hotelToggle.IsVisible = !hotelToggle.IsVisible;
+            if (hotelLbl != null)
+                hotelLbl.IsVisible = !hotelToggle.IsVisible;
         }
     }
 
